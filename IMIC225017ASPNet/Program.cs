@@ -11,7 +11,7 @@ namespace IMIC225017ASPNet
         static void Main(string[] args)
         {
             Console.WriteLine("Xin chào các bạn");
-            Console.WriteLine("Đến với khóa Asspnet2!");
+            Console.WriteLine("Đến với khóa Asspnet2 Branch QUANNT");
         }
     }
 }
