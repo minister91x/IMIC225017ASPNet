@@ -1,0 +1,7 @@
+C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017ASPNet\bin\Debug\IMIC225017ASPNet.exe.config
+C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017ASPNet\bin\Debug\IMIC225017ASPNet.exe
+C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017ASPNet\bin\Debug\IMIC225017ASPNet.pdb
+C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017ASPNet\obj\Debug\IMIC225017ASPNet.csproj.AssemblyReference.cache
+C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017ASPNet\obj\Debug\IMIC225017ASPNet.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017ASPNet\obj\Debug\IMIC225017ASPNet.exe
+C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017ASPNet\obj\Debug\IMIC225017ASPNet.pdb
