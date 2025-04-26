@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{60F4F1C0-AF4F-4530-B269-11867D72C0D7}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>IMIC225017ASPNet</RootNamespace>
-    <AssemblyName>IMIC225017ASPNet</AssemblyName>
+    <ProjectGuid>{EA849D68-AD39-4502-A373-2E91098420A5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IMIC225017.DataAccess</RootNamespace>
+    <AssemblyName>IMIC225017.DataAccess</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,16 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="DataAccessLayer\Bai4.cs" />
+    <Compile Include="DataAccessLayer\Bai5.cs" />
+    <Compile Include="DataAccessLayer\Class1.cs" />
+    <Compile Include="DataObject\TinhTong_InputData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\IMIC225017.DataAccess\IMIC225017.DataAccess.csproj">
-      <Project>{ea849d68-ad39-4502-a373-2e91098420a5}</Project>
-      <Name>IMIC225017.DataAccess</Name>
+    <ProjectReference Include="..\IMIC225017.Common\IMIC225017.Common.csproj">
+      <Project>{53f0f332-cf86-47df-8336-14a2c72c5108}</Project>
+      <Name>IMIC225017.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

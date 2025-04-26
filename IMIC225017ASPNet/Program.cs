@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using IMIC225017.DataAccess.DataObject;
+using IMIC225017ASPNet.BTVN;
 
 namespace IMIC225017ASPNet
 {
@@ -13,8 +15,8 @@ namespace IMIC225017ASPNet
         {
             Console.OutputEncoding = Encoding.UTF8;
 
-            var bai4 = new BTVN.Bai4();
-            bai4.GiaiThua();
+            // var bai4 = new BTVN.Bai4();
+            ////  bai4.GiaiThua();
 
 
             //int myValiable = 1000000;
@@ -136,6 +138,49 @@ namespace IMIC225017ASPNet
                 Console.WriteLine("foreach - {0} là số ", item);
             }
 
+
+            var bai4_VN = new IMIC225017.DataAccess.DataAccessLayer.Bai4();
+
+            //Console.WriteLine("mời nhập số cần tính giai thừa: ");
+            //var input = Console.ReadLine();
+            //var result = bai4_VN.GiaiThua(input);
+
+            //if (result > 0)
+            //{
+            //    Console.WriteLine("Kết quả = {0} ", result);
+            //}
+            //else
+            //{
+            //    switch (result)
+            //    {
+            //        case -1:
+            //            Console.WriteLine("nhập số không hợp lệ ");
+            //            break;
+            //        case -2:
+            //            Console.WriteLine("Bạn nhập số < 0 hoặc số quá lớn ");
+            //            break;
+            //        case -3:
+            //            Console.WriteLine("bạn nhập vào số quá lớn ");
+            //            break;
+            //        default:
+            //            break;
+            //    }
+            //}
+
+            //int secondValueInput;
+            //string thirdValueInput = string.Empty;
+            //var tong = bai4_VN.TinhTong(3, 4, out secondValueInput, ref thirdValueInput);
+
+            //Console.WriteLine("Kết quả 1 = {0} ", tong);
+            //Console.WriteLine("Kết quả out = {0} ", secondValueInput);
+            //Console.WriteLine("Kết quả ref = {0} ", thirdValueInput);
+
+
+
+            var inputObject = new TinhTong_InputData();
+            inputObject.SoThuNhat = 10;
+            inputObject.SoThuHai = 100;
+            var resultObject = bai4_VN.TinhTong_Object(inputObject);
         }
 
         public static void TinhToan(int a, int b)

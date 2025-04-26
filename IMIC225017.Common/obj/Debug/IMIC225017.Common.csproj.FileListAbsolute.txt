@@ -1,0 +1,6 @@
+C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017.Common\bin\Debug\IMIC225017.Common.dll
+C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017.Common\bin\Debug\IMIC225017.Common.pdb
+C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017.Common\obj\Debug\IMIC225017.Common.csproj.AssemblyReference.cache
+C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017.Common\obj\Debug\IMIC225017.Common.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017.Common\obj\Debug\IMIC225017.Common.dll
+C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017.Common\obj\Debug\IMIC225017.Common.pdb
