@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using IMIC225017.DataAccess.CustomException;
 using IMIC225017.DataAccess.DataObject;
 using IMIC225017ASPNet.BTVN;
 
@@ -181,6 +182,20 @@ namespace IMIC225017ASPNet
             inputObject.SoThuNhat = 10;
             inputObject.SoThuHai = 100;
             var resultObject = bai4_VN.TinhTong_Object(inputObject);
+
+
+            try
+            {
+                bai4_VN.UserInput("Đây là một chuỗi rất dài ...");
+            }
+            catch (DataTooLongExeption e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            catch (Exception otherExeption)
+            {
+                Console.WriteLine(otherExeption.Message);
+            }
         }
 
         public static void TinhToan(int a, int b)

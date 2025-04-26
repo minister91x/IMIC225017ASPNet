@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using IMIC225017.DataAccess.CustomException;
 using IMIC225017.DataAccess.DataObject;
 
 namespace IMIC225017.DataAccess.DataAccessLayer
@@ -27,7 +28,24 @@ namespace IMIC225017.DataAccess.DataAccessLayer
 
         public static void abc(int x = 10)
         {
+            try
+            {
 
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+        public  void UserInput(string s)
+        {
+            if (s.Length > 3)
+            {
+                throw new DataTooLongExeption();
+                // lỗi văng ra
+            }
+            //Other code - no exeption
         }
 
 
@@ -52,6 +70,10 @@ namespace IMIC225017.DataAccess.DataAccessLayer
 
                 Console.WriteLine("Exception Messege: " + ex.Message + " | StactTrace:" + ex.StackTrace);
                 Console.WriteLine("Exception Source:" + ex.Source);
+            }
+            finally
+            {
+                Console.WriteLine("finally");
             }
             return 1;
 
