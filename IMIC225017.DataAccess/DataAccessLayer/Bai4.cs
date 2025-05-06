@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using IMIC225017.DataAccess.CustomException;
 using IMIC225017.DataAccess.DataObject;
+using IMIC225017.DataAccess.Struct;
 
 namespace IMIC225017.DataAccess.DataAccessLayer
 {
@@ -87,6 +88,11 @@ namespace IMIC225017.DataAccess.DataAccessLayer
             {
 
             }
+            return 1;
+        }
+
+        public int TinhTong_ArrayObject(Product product)
+        {
             return 1;
         }
     }

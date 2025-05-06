@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using IMIC225017.DataAccess.CustomException;
 using IMIC225017.DataAccess.DataObject;
+using IMIC225017.DataAccess.Enum;
 using IMIC225017ASPNet.BTVN;
 
 namespace IMIC225017ASPNet
@@ -178,24 +179,82 @@ namespace IMIC225017ASPNet
 
 
 
-            var inputObject = new TinhTong_InputData();
-            inputObject.SoThuNhat = 10;
-            inputObject.SoThuHai = 100;
-            var resultObject = bai4_VN.TinhTong_Object(inputObject);
+            //var inputObject = new TinhTong_InputData();
+            //inputObject.SoThuNhat = 10;
+            //inputObject.SoThuHai = 100;
+            //var resultObject = bai4_VN.TinhTong_Object(inputObject);
 
 
-            try
+            //try
+            //{
+            //    bai4_VN.UserInput("Đây là một chuỗi rất dài ...");
+            //}
+            //catch (DataTooLongExeption e)
+            //{
+            //    Console.WriteLine(e.Message);
+            //}
+            //catch (Exception otherExeption)
+            //{
+            //    Console.WriteLine(otherExeption.Message);
+            //}
+
+            //var product = new IMIC225017.DataAccess.Struct.Product(1, "Bánh", 1000);
+
+            //var product2 = new IMIC225017.DataAccess.Struct.Product();
+            //product2.ProductID = 2;
+            //product2.ProductName = "Bánh mì";
+            //product2.Price = 2000;
+
+            //Console.WriteLine($"Product ID 1: {product.ProductID} - Tên sản phẩm: {product.ProductName} - Giá: {product.Price}");
+            //Console.WriteLine($"Product ID 2: {product2.ProductID} - Tên sản phẩm: {product2.ProductName} - Giá: {product2.Price}");
+
+            //int OrderStatus = 0;
+            //if (OrderStatus == (int)OrderStatusEnum.KHOI_TAO)
+            //{
+            //    /// code 
+            //    /// 
+            //    ///
+            //}
+            //else if (OrderStatus == (int)OrderStatusEnum.DANG_GIAO)
+            //{
+
+            //}
+            //else if (OrderStatus == (int)OrderStatusEnum.DA_GIAO)
+            //{
+
+            //}
+
+
+            int[] myArray = { 5, 1, 3 };
+
+            var Values_Index1 = myArray[1];
+            Console.WriteLine("Index 1 = {0}", Values_Index1);
+
+            for (int i = 0; i < myArray.Length; i++)
             {
-                bai4_VN.UserInput("Đây là một chuỗi rất dài ...");
+                Console.WriteLine("value = {0}", myArray[i]);
             }
-            catch (DataTooLongExeption e)
+
+            foreach (var item in myArray)
             {
-                Console.WriteLine(e.Message);
+                Console.WriteLine("item = {0}", item);
             }
-            catch (Exception otherExeption)
+
+            myArray.OrderByDescending(s => s).ToList();
+
+            foreach (var item in myArray.OrderByDescending(s => s).ToList())
             {
-                Console.WriteLine(otherExeption.Message);
+                Console.WriteLine("item sort = {0}", item);
             }
+            var sum = myArray.Sum();
+            Console.WriteLine("item sum = {0}", sum);
+
+            var max = myArray.Max();
+            Console.WriteLine("item max = {0}", max);
+            var min = myArray.Min();
+            Console.WriteLine("item min = {0}", min);
+
+            myArray.
         }
 
         public static void TinhToan(int a, int b)
