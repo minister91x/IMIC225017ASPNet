@@ -1,12 +1,17 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using IMIC225017.DataAccess.CustomException;
+using IMIC225017.DataAccess.DataAccessLayer;
 using IMIC225017.DataAccess.DataObject;
 using IMIC225017.DataAccess.Enum;
 using IMIC225017ASPNet.BTVN;
+
 
 namespace IMIC225017ASPNet
 {
@@ -73,75 +78,75 @@ namespace IMIC225017ASPNet
             int x = 10;
             int y = x--;
 
-            Console.WriteLine($"số b= : {b}");
-            Console.WriteLine($"số y=: {y}");
-            switch (x)
-            {
-                case 1:
-                    Console.WriteLine("x=1");
-                    break;
-                case 2:
-                    Console.WriteLine("x=2");
-                    break;
+            //Console.WriteLine($"số b= : {b}");
+            //Console.WriteLine($"số y=: {y}");
+            //switch (x)
+            //{
+            //    case 1:
+            //        Console.WriteLine("x=1");
+            //        break;
+            //    case 2:
+            //        Console.WriteLine("x=2");
+            //        break;
 
-                case 3:
-                    Console.WriteLine("x=3");
-                    break;
+            //    case 3:
+            //        Console.WriteLine("x=3");
+            //        break;
 
-                case 4:
-                    Console.WriteLine("x=4");
-                    break;
+            //    case 4:
+            //        Console.WriteLine("x=4");
+            //        break;
 
-                case 5:
-                    Console.WriteLine("x=5");
-                    break;
-                default:
-                    break;
-            }
-
-
-            if (x == 10)
-            {
-                Console.WriteLine("ok");
-            }
-            else
-            {
-                Console.WriteLine("fail");
-            }
-
-            var message = x == 10 ? "ok 10" :
-                x == 15 ? "ok 15" :
-                x == 20 ? "ok 20" :
-                x == 30 ? "ok 30" : "fail";
-
-            Console.WriteLine(message);
-
-            var list = new List<int>();
-            list.Add(1);
-            list.Add(2);
-            list.Add(3);
-            list.Add(4);
+            //    case 5:
+            //        Console.WriteLine("x=5");
+            //        break;
+            //    default:
+            //        break;
+            //}
 
 
-            for (int i = 1; i <= list.Count; i++)
-            {
-                //if (i % 2 == 0)
-                //{
-                //    continue;
-                //}
-                Console.WriteLine(" for - {0} là số ", i);
+            //if (x == 10)
+            //{
+            //    Console.WriteLine("ok");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("fail");
+            //}
 
-                //Console.WriteLine("{0} là số lẻ", i);
-            }
+            //var message = x == 10 ? "ok 10" :
+            //    x == 15 ? "ok 15" :
+            //    x == 20 ? "ok 20" :
+            //    x == 30 ? "ok 30" : "fail";
+
+            //Console.WriteLine(message);
+
+            //var list = new List<int>();
+            //list.Add(1);
+            //list.Add(2);
+            //list.Add(3);
+            //list.Add(4);
 
 
-            foreach (var item in list)
-            {
-                Console.WriteLine("foreach - {0} là số ", item);
-            }
+            //for (int i = 1; i <= list.Count; i++)
+            //{
+            //    //if (i % 2 == 0)
+            //    //{
+            //    //    continue;
+            //    //}
+            //    Console.WriteLine(" for - {0} là số ", i);
+
+            //    //Console.WriteLine("{0} là số lẻ", i);
+            //}
 
 
-            var bai4_VN = new IMIC225017.DataAccess.DataAccessLayer.Bai4();
+            //foreach (var item in list)
+            //{
+            //    Console.WriteLine("foreach - {0} là số ", item);
+            //}
+
+
+            //var bai4_VN = new IMIC225017.DataAccess.DataAccessLayer.Bai4();
 
             //Console.WriteLine("mời nhập số cần tính giai thừa: ");
             //var input = Console.ReadLine();
@@ -225,37 +230,152 @@ namespace IMIC225017ASPNet
             //}
 
 
-            int[] myArray = { 5, 1, 3 };
+            //int[] myArray = { 5, 1, 3 };
 
-            var Values_Index1 = myArray[1];
-            Console.WriteLine("Index 1 = {0}", Values_Index1);
+            //var Values_Index1 = myArray[1];
+            //Console.WriteLine("Index 1 = {0}", Values_Index1);
 
-            for (int i = 0; i < myArray.Length; i++)
+            //for (int i = 0; i < myArray.Length; i++)
+            //{
+            //    Console.WriteLine("value = {0}", myArray[i]);
+            //}
+
+            //foreach (var item in myArray)
+            //{
+            //    Console.WriteLine("item = {0}", item);
+            //}
+
+            //myArray.OrderByDescending(s => s).ToList();
+
+            //foreach (var item in myArray.OrderByDescending(s => s).ToList())
+            //{
+            //    Console.WriteLine("item sort = {0}", item);
+            //}
+            //var sum = myArray.Sum();
+            //Console.WriteLine("item sum = {0}", sum);
+
+            //var max = myArray.Max();
+            //Console.WriteLine("item max = {0}", max);
+            //var min = myArray.Min();
+            //Console.WriteLine("item min = {0}", min);
+
+            //myArray.
+
+
+            //var studentManager = new StudentManager();
+            //var list = studentManager.Student_ReadByExel();
+            //if(list.Count > 0)
+            //{
+            //    foreach (var item in list)
+            //    {
+            //        Console.WriteLine($"Họ tên: {item.HoTen}");
+            //        Console.WriteLine($"Điểm trung bình: {item.DienTrungBinh}");
+            //    }
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Không có dữ liệu");
+            //}
+
+            var dateNowutc = DateTime.UtcNow; // lấy thời gian UTC ( UTC +0)
+            var dateNow = DateTime.Now; // lấy thời gian hiện tại của máy ( UTC +7)
+            Console.WriteLine($"dateNowutc: {dateNowutc}");
+            Console.WriteLine($"dateNow: {dateNow}");
+
+            //Cách 1: dùng các hàm Add có sẵn 
+            var conggio = dateNow.AddHours(1).AddDays(1); // cộng thêm 1 giờ
+            var trugio = dateNow.AddHours(-1); // trừ đi 1 giờ
+
+            Console.WriteLine($"conggio: {conggio}");
+            Console.WriteLine($"trugio: {trugio}");
+
+
+            // Cách 2: dùng TimeSpan
+            var timeSpan = new TimeSpan(2, 10, 15); // 1 giờ
+            var conggio_TimeSpan = dateNow + timeSpan; // cộng thêm 1 giờ
+            var conggio_TimeSpan2 = dateNow.Add(timeSpan); // cộng thêm 1 giờ
+
+            Console.WriteLine($"conggio_TimeSpan: {conggio_TimeSpan}");
+            Console.WriteLine($"conggio_TimeSpan2: {conggio_TimeSpan2}");
+
+
+            // Đo khoảng cách giữa 2 mốc thời gian
+
+            // Thời điểm hiện tại.
+            DateTime aDateTime = DateTime.Now;
+
+            // Thời điểm năm 2000
+            DateTime y2K = new DateTime(2000, 1, 1);
+
+            // Khoảng thời gian từ năm 2000 tới nay.
+            TimeSpan interval = aDateTime.Subtract(y2K);
+
+            Console.WriteLine($"conggio_TimeSpan: {interval.TotalDays}");
+
+            DateTime aDateTimeNow = DateTime.Now;
+            DateTime aDateTimePrevious = DateTime.Now.AddDays(-1);
+
+
+            var ketquaSoSanh = aDateTimeNow.CompareTo(aDateTimePrevious);
+            Console.WriteLine($"ketquaSoSanh: {ketquaSoSanh}");
+
+
+            DateTime aDateTime1 = new DateTime(2022, 8, 22, 19, 30, 00);
+            // Các định dạng date-time được hỗ trợ.
+            string[] formattedStrings = aDateTime1.GetDateTimeFormats();
+
+            foreach (string format in formattedStrings)
             {
-                Console.WriteLine("value = {0}", myArray[i]);
+                Console.WriteLine(format);
             }
 
-            foreach (var item in myArray)
+            Console.WriteLine($"aDateTimeNow d: {aDateTimePrevious.ToString("d/MM/yyyy HH:mm:ss")}");
+            Console.WriteLine($"aDateTimeNow dd : {aDateTimePrevious.ToString("dd/MM/yyyy HH:mm:ss")}");
+            Console.WriteLine($"aDateTimeNow ddd: {aDateTimePrevious.ToString("ddd/MM/yyyy HH:mm:ss")}");
+            Console.WriteLine($"aDateTimeNow dddd: {aDateTimePrevious.ToString("dddd/MM/yyyy HH:mm:ss")}");
+            /// 09/10 / 2023 09:00:00 dd 
+            /// 
+
+
+            var dayinMonth = DateTime.DaysInMonth(2023, 10);
+            Console.WriteLine($"dayinMonth: {dayinMonth}");
+
+            var createDateString = "10/05/2025666";
+            //var datefromText = DateTime.ParseExact(createDateString, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            //Console.WriteLine($"datefromText: {datefromText.ToString("yyyy/MM/dd")}");
+
+
+            // Kiểm tra text có phải định dạng ngày tháng không 
+            DateTime dateValue;
+            if (DateTime.TryParseExact(createDateString, "dd/MM/yyyy", new CultureInfo("en-US"), DateTimeStyles.None, out dateValue))
             {
-                Console.WriteLine("item = {0}", item);
+
+                Console.WriteLine(createDateString + "đúng định dạng ngày tháng");
+            }
+            else
+            {
+                Console.WriteLine(createDateString + "sai định dạng ngày tháng");
             }
 
-            myArray.OrderByDescending(s => s).ToList();
+            var mystring = "imic_be_net_";
+            var arr = mystring.Split('_');
 
-            foreach (var item in myArray.OrderByDescending(s => s).ToList())
+            foreach (var item in arr)
             {
-                Console.WriteLine("item sort = {0}", item);
+                Console.WriteLine(item);
             }
-            var sum = myArray.Sum();
-            Console.WriteLine("item sum = {0}", sum);
 
-            var max = myArray.Max();
-            Console.WriteLine("item max = {0}", max);
-            var min = myArray.Min();
-            Console.WriteLine("item min = {0}", min);
+            var newstring = mystring.Substring(0, mystring.Length - 1);
+            Console.WriteLine(newstring);
 
-            myArray.
+            var mystring2 = mystring.Replace("imic", "IMIC");
+            Console.WriteLine(mystring2);
+
+            var mystring3 = mystring2 + newstring;
+            Console.WriteLine(mystring3);
         }
+
+
 
         public static void TinhToan(int a, int b)
         {
