@@ -10,6 +10,7 @@ using IMIC225017.DataAccess.CustomException;
 using IMIC225017.DataAccess.DataAccessLayer;
 using IMIC225017.DataAccess.DataObject;
 using IMIC225017.DataAccess.Enum;
+using IMIC225017.DataAccess.Struct;
 using IMIC225017ASPNet.BTVN;
 
 
@@ -277,102 +278,144 @@ namespace IMIC225017ASPNet
             //    Console.WriteLine("Không có dữ liệu");
             //}
 
-            var dateNowutc = DateTime.UtcNow; // lấy thời gian UTC ( UTC +0)
-            var dateNow = DateTime.Now; // lấy thời gian hiện tại của máy ( UTC +7)
-            Console.WriteLine($"dateNowutc: {dateNowutc}");
-            Console.WriteLine($"dateNow: {dateNow}");
+            //var dateNowutc = DateTime.UtcNow; // lấy thời gian UTC ( UTC +0)
+            //var dateNow = DateTime.Now; // lấy thời gian hiện tại của máy ( UTC +7)
+            //Console.WriteLine($"dateNowutc: {dateNowutc}");
+            //Console.WriteLine($"dateNow: {dateNow}");
 
-            //Cách 1: dùng các hàm Add có sẵn 
-            var conggio = dateNow.AddHours(1).AddDays(1); // cộng thêm 1 giờ
-            var trugio = dateNow.AddHours(-1); // trừ đi 1 giờ
+            ////Cách 1: dùng các hàm Add có sẵn 
+            //var conggio = dateNow.AddHours(1).AddDays(1); // cộng thêm 1 giờ
+            //var trugio = dateNow.AddHours(-1); // trừ đi 1 giờ
 
-            Console.WriteLine($"conggio: {conggio}");
-            Console.WriteLine($"trugio: {trugio}");
-
-
-            // Cách 2: dùng TimeSpan
-            var timeSpan = new TimeSpan(2, 10, 15); // 1 giờ
-            var conggio_TimeSpan = dateNow + timeSpan; // cộng thêm 1 giờ
-            var conggio_TimeSpan2 = dateNow.Add(timeSpan); // cộng thêm 1 giờ
-
-            Console.WriteLine($"conggio_TimeSpan: {conggio_TimeSpan}");
-            Console.WriteLine($"conggio_TimeSpan2: {conggio_TimeSpan2}");
+            //Console.WriteLine($"conggio: {conggio}");
+            //Console.WriteLine($"trugio: {trugio}");
 
 
-            // Đo khoảng cách giữa 2 mốc thời gian
+            //// Cách 2: dùng TimeSpan
+            //var timeSpan = new TimeSpan(2, 10, 15); // 1 giờ
+            //var conggio_TimeSpan = dateNow + timeSpan; // cộng thêm 1 giờ
+            //var conggio_TimeSpan2 = dateNow.Add(timeSpan); // cộng thêm 1 giờ
 
-            // Thời điểm hiện tại.
-            DateTime aDateTime = DateTime.Now;
-
-            // Thời điểm năm 2000
-            DateTime y2K = new DateTime(2000, 1, 1);
-
-            // Khoảng thời gian từ năm 2000 tới nay.
-            TimeSpan interval = aDateTime.Subtract(y2K);
-
-            Console.WriteLine($"conggio_TimeSpan: {interval.TotalDays}");
-
-            DateTime aDateTimeNow = DateTime.Now;
-            DateTime aDateTimePrevious = DateTime.Now.AddDays(-1);
+            //Console.WriteLine($"conggio_TimeSpan: {conggio_TimeSpan}");
+            //Console.WriteLine($"conggio_TimeSpan2: {conggio_TimeSpan2}");
 
 
-            var ketquaSoSanh = aDateTimeNow.CompareTo(aDateTimePrevious);
-            Console.WriteLine($"ketquaSoSanh: {ketquaSoSanh}");
+            //// Đo khoảng cách giữa 2 mốc thời gian
+
+            //// Thời điểm hiện tại.
+            //DateTime aDateTime = DateTime.Now;
+
+            //// Thời điểm năm 2000
+            //DateTime y2K = new DateTime(2000, 1, 1);
+
+            //// Khoảng thời gian từ năm 2000 tới nay.
+            //TimeSpan interval = aDateTime.Subtract(y2K);
+
+            //Console.WriteLine($"conggio_TimeSpan: {interval.TotalDays}");
+
+            //DateTime aDateTimeNow = DateTime.Now;
+            //DateTime aDateTimePrevious = DateTime.Now.AddDays(-1);
 
 
-            DateTime aDateTime1 = new DateTime(2022, 8, 22, 19, 30, 00);
-            // Các định dạng date-time được hỗ trợ.
-            string[] formattedStrings = aDateTime1.GetDateTimeFormats();
-
-            foreach (string format in formattedStrings)
-            {
-                Console.WriteLine(format);
-            }
-
-            Console.WriteLine($"aDateTimeNow d: {aDateTimePrevious.ToString("d/MM/yyyy HH:mm:ss")}");
-            Console.WriteLine($"aDateTimeNow dd : {aDateTimePrevious.ToString("dd/MM/yyyy HH:mm:ss")}");
-            Console.WriteLine($"aDateTimeNow ddd: {aDateTimePrevious.ToString("ddd/MM/yyyy HH:mm:ss")}");
-            Console.WriteLine($"aDateTimeNow dddd: {aDateTimePrevious.ToString("dddd/MM/yyyy HH:mm:ss")}");
-            /// 09/10 / 2023 09:00:00 dd 
-            /// 
+            //var ketquaSoSanh = aDateTimeNow.CompareTo(aDateTimePrevious);
+            //Console.WriteLine($"ketquaSoSanh: {ketquaSoSanh}");
 
 
-            var dayinMonth = DateTime.DaysInMonth(2023, 10);
-            Console.WriteLine($"dayinMonth: {dayinMonth}");
+            //DateTime aDateTime1 = new DateTime(2022, 8, 22, 19, 30, 00);
+            //// Các định dạng date-time được hỗ trợ.
+            //string[] formattedStrings = aDateTime1.GetDateTimeFormats();
 
-            var createDateString = "10/05/2025666";
-            //var datefromText = DateTime.ParseExact(createDateString, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-            //Console.WriteLine($"datefromText: {datefromText.ToString("yyyy/MM/dd")}");
+            //foreach (string format in formattedStrings)
+            //{
+            //    Console.WriteLine(format);
+            //}
+
+            //Console.WriteLine($"aDateTimeNow d: {aDateTimePrevious.ToString("d/MM/yyyy HH:mm:ss")}");
+            //Console.WriteLine($"aDateTimeNow dd : {aDateTimePrevious.ToString("dd/MM/yyyy HH:mm:ss")}");
+            //Console.WriteLine($"aDateTimeNow ddd: {aDateTimePrevious.ToString("ddd/MM/yyyy HH:mm:ss")}");
+            //Console.WriteLine($"aDateTimeNow dddd: {aDateTimePrevious.ToString("dddd/MM/yyyy HH:mm:ss")}");
+            ///// 09/10 / 2023 09:00:00 dd 
+            ///// 
 
 
-            // Kiểm tra text có phải định dạng ngày tháng không 
-            DateTime dateValue;
-            if (DateTime.TryParseExact(createDateString, "dd/MM/yyyy", new CultureInfo("en-US"), DateTimeStyles.None, out dateValue))
-            {
+            //var dayinMonth = DateTime.DaysInMonth(2023, 10);
+            //Console.WriteLine($"dayinMonth: {dayinMonth}");
 
-                Console.WriteLine(createDateString + "đúng định dạng ngày tháng");
-            }
-            else
-            {
-                Console.WriteLine(createDateString + "sai định dạng ngày tháng");
-            }
+            //var createDateString = "10/05/2025666";
+            ////var datefromText = DateTime.ParseExact(createDateString, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            ////Console.WriteLine($"datefromText: {datefromText.ToString("yyyy/MM/dd")}");
 
-            var mystring = "imic_be_net_";
-            var arr = mystring.Split('_');
 
-            foreach (var item in arr)
-            {
-                Console.WriteLine(item);
-            }
+            //// Kiểm tra text có phải định dạng ngày tháng không 
+            //DateTime dateValue;
+            //if (DateTime.TryParseExact(createDateString, "dd/MM/yyyy", new CultureInfo("en-US"), DateTimeStyles.None, out dateValue))
+            //{
 
-            var newstring = mystring.Substring(0, mystring.Length - 1);
-            Console.WriteLine(newstring);
+            //    Console.WriteLine(createDateString + "đúng định dạng ngày tháng");
+            //}
+            //else
+            //{
+            //    Console.WriteLine(createDateString + "sai định dạng ngày tháng");
+            //}
 
-            var mystring2 = mystring.Replace("imic", "IMIC");
-            Console.WriteLine(mystring2);
+            //var mystring = "imic_be_net_";
+            //var arr = mystring.Split('_');
 
-            var mystring3 = mystring2 + newstring;
-            Console.WriteLine(mystring3);
+            //foreach (var item in arr)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            //var newstring = mystring.Substring(0, mystring.Length - 1);
+            //Console.WriteLine(newstring);
+
+            //var mystring2 = mystring.Replace("imic", "IMIC");
+            //Console.WriteLine(mystring2);
+
+            //var mystring3 = mystring2 + newstring;
+            //Console.WriteLine(mystring3);
+
+
+            //var bai4 = new Bai4();
+            //var tong_int = bai4.TinhTong<int>(10, 20);
+            //Console.WriteLine("Tong int = {0}", tong_int);
+
+            //var tong_long = bai4.TinhTong<long>(10, 20);
+
+            //Console.WriteLine("Tong tong_string = {0}", tong_long);
+
+            //var tong_string = bai4.TinhTong<string>("IMIC_BE", "NETCORE");
+
+            //Console.WriteLine("tong_string = {0}", tong_string);
+
+
+            //var genericClass = new IMIC225017.DataAccess.Generic.GenericClass<string>();
+            //genericClass.Properties = "IMIC BACKNET NET";
+            //var result = genericClass.Display();
+
+            //Console.WriteLine("result = {0}", result);
+
+
+            //var genericClass2 = new IMIC225017.DataAccess.Generic.GenericClass<int>();
+
+            //genericClass2.Properties = 1000;
+            //var result2 = genericClass2.Display();
+            //Console.WriteLine("result2 = {0}", result2);
+
+
+            //var genericClass3 = new IMIC225017.DataAccess.Generic.GenericClass<Product>();
+            //genericClass3.Properties = new Product(1, "IPHONE 20", 1000);
+            //var result3 = genericClass3.Display();
+            //Console.WriteLine("result3 = {0}", result3.ProductName);
+
+
+
+            var collection = new IMIC225017.DataAccess.Collection.MyCollection();
+
+            //collection.Dictionary();
+            //collection.ArrayList();
+            //collection.hashtable();
+            collection.HashSet();
         }
 
 

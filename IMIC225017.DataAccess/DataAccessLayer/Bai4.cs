@@ -50,6 +50,35 @@ namespace IMIC225017.DataAccess.DataAccessLayer
         }
 
 
+        public int TinhTong(int SoThuNhat, int SoThuHai)
+        {
+            return SoThuNhat + SoThuHai;
+        }
+
+        public long TinhTong(long SoThuNhat, long SoThuHai)
+        {
+            return SoThuNhat + SoThuHai;
+        }
+
+        public double TinhTong(double SoThuNhat, double SoThuHai)
+        {
+            return SoThuNhat + SoThuHai;
+        }
+        public decimal TinhTong(decimal SoThuNhat, decimal SoThuHai)
+        {
+            return SoThuNhat + SoThuHai;
+        }
+
+     
+        public T TinhTong<T>(T SoThuNhat, T SoThuHai)
+        {
+            dynamic a = SoThuNhat;
+            dynamic b = SoThuHai;
+            return a + b;
+        }
+
+
+
         public int TinhTong(int SoThuNhat, int SoThuHai, out int SecondValue, ref string ThirdValue)
         {
             SecondValue = 20;
