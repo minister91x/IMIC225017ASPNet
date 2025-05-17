@@ -10,5 +10,16 @@ namespace IMIC225017.DataAccess.DataObject
     {
         public int SoThuNhat { get; set; }
         public int SoThuHai { get; set; }
+
+
+        public TinhTong_InputData()
+        {
+           var student = new Student();
+            student.Id = 1;
+            student.Name = "Nguyen Van A";
+            student.Address = "Ha Noi";
+            Console.WriteLine(student.GetInfo());
+
+        }
     }
 }

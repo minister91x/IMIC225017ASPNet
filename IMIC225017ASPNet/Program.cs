@@ -416,6 +416,22 @@ namespace IMIC225017ASPNet
             //collection.ArrayList();
             //collection.hashtable();
             collection.HashSet();
+
+
+            var student = new IMIC225017.DataAccess.DataObject.Student();
+            student.Id = 1;
+
+            var student2 = new IMIC225017.DataAccess.DataObject.Student();
+            student2.Id = 2;
+
+           // var animal = new IMIC225017.DataAccess.DataObject.Animal();
+
+            var emp = new Employee();
+            emp.GoToSleep();
+            emp.GoToLunch();
+            emp.GoToSleep();
+            emp.Id = 1;
+            emp.Name = "IMIC";
         }
 
 
