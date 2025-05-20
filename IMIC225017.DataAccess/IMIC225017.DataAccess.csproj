@@ -80,21 +80,30 @@
     <Compile Include="DataAccessLayer\StudentManager.cs" />
     <Compile Include="DataObject\Animal.cs" />
     <Compile Include="DataObject\Bird.cs" />
+    <Compile Include="DataObject\Car.cs" />
     <Compile Include="DataObject\Employee.cs" />
     <Compile Include="DataObject\Employee2.cs" />
     <Compile Include="DataObject\Lion.cs" />
+    <Compile Include="DataObject\MayLenovo.cs" />
+    <Compile Include="DataObject\MayviTinh.cs" />
+    <Compile Include="DataObject\Product.cs" />
+    <Compile Include="DataObject\ProductGetListRequestData.cs" />
+    <Compile Include="DataObject\ReturnData.cs" />
     <Compile Include="DataObject\Student.cs" />
     <Compile Include="DataObject\Student2.cs" />
     <Compile Include="DataObject\TinhTong_InputData.cs" />
     <Compile Include="CustomException\DataTooLongExeption.cs" />
+    <Compile Include="Enum\ProductInsertStatus.cs" />
     <Compile Include="Enum\ProductItemTypes.cs" />
     <Compile Include="Enum\OrderStatusEnum.cs" />
     <Compile Include="Generic\GenericClass.cs" />
+    <Compile Include="Interface\IProduct.cs" />
     <Compile Include="Interface\IShape.cs" />
+    <Compile Include="Manager\ProductManagerment.cs" />
     <Compile Include="Manager\ShapeManagerment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Struct\Category.cs" />
-    <Compile Include="Struct\Product.cs" />
+    <Compile Include="Struct\ProductStruct.cs" />
     <Compile Include="Struct\Student.cs" />
   </ItemGroup>
   <ItemGroup>

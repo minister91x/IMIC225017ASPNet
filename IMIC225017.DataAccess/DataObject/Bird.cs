@@ -21,6 +21,5 @@ namespace IMIC225017.DataAccess.DataObject
             Console.WriteLine("Bird is display.");
         }
     }
-    {
-    }
+    
 }

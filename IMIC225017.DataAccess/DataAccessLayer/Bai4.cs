@@ -120,7 +120,7 @@ namespace IMIC225017.DataAccess.DataAccessLayer
             return 1;
         }
 
-        public int TinhTong_ArrayObject(Product product)
+        public int TinhTong_ArrayObject(ProductStruct product)
         {
             return 1;
         }

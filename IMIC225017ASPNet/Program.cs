@@ -410,28 +410,52 @@ namespace IMIC225017ASPNet
 
 
 
-            var collection = new IMIC225017.DataAccess.Collection.MyCollection();
+            // var collection = new IMIC225017.DataAccess.Collection.MyCollection();
 
-            //collection.Dictionary();
-            //collection.ArrayList();
-            //collection.hashtable();
-            collection.HashSet();
+            // //collection.Dictionary();
+            // //collection.ArrayList();
+            // //collection.hashtable();
+            // collection.HashSet();
 
 
-            var student = new IMIC225017.DataAccess.DataObject.Student();
-            student.Id = 1;
+            // var student = new IMIC225017.DataAccess.DataObject.Student();
+            // student.Id = 1;
 
-            var student2 = new IMIC225017.DataAccess.DataObject.Student();
-            student2.Id = 2;
+            // var student2 = new IMIC225017.DataAccess.DataObject.Student();
+            // student2.Id = 2;
 
-           // var animal = new IMIC225017.DataAccess.DataObject.Animal();
+            //// var animal = new IMIC225017.DataAccess.DataObject.Animal();
 
-            var emp = new Employee();
-            emp.GoToSleep();
-            emp.GoToLunch();
-            emp.GoToSleep();
-            emp.Id = 1;
-            emp.Name = "IMIC";
+            // var emp = new Employee();
+            // emp.GoToSleep();
+            // emp.GoToLunch();
+            // emp.GoToSleep();
+            // emp.Id = 1;
+            // emp.Name = "IMIC";
+
+            //var car = new IMIC225017.DataAccess.DataObject.Car();
+            //Console.WriteLine("GetId = {0}", car.GetId());
+
+
+            //var maylenovo = new IMIC225017.DataAccess.DataObject.MayLenovo();
+            //maylenovo.ChieuDai = 10;
+            //maylenovo.ChieuRong = 20;
+            //maylenovo.UpRam();
+            //maylenovo.ShowInfo();
+
+            var productManager = new IMIC225017.DataAccess.Manager.ProductManagerment();
+
+            var product = new IMIC225017.DataAccess.DataObject.Product()
+            {
+                ProductId = 1,
+                ProductName = "<body",
+                Price = 1000
+            };
+            var result = productManager.ProductInsert(product);
+
+            Console.WriteLine("ResponseMessage:{0}", result.ResponseMessage);
+            Console.WriteLine("ResponseCode: {0}", result.ResponseCode);
+
         }
 
 

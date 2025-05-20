@@ -16,8 +16,8 @@ namespace IMIC225017.DataAccess.DataObject
         {
            var student = new Student();
             student.Id = 1;
-            student.Name = "Nguyen Van A";
-            student.Address = "Ha Noi";
+          //  student.Name = "Nguyen Van A";
+            //student.Address = "Ha Noi";
             Console.WriteLine(student.GetInfo());
 
         }

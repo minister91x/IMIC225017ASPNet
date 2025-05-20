@@ -7,7 +7,7 @@ using IMIC225017.DataAccess.Enum;
 
 namespace IMIC225017.DataAccess.Struct
 {
-    public struct Product
+    public struct ProductStruct
     {
         // Thuộc tính : là đặc điểm của đối tượng ( chiều dài , cao , màu sắc ,cân nặng...)
         public int ProductID { get; set; }
@@ -21,7 +21,7 @@ namespace IMIC225017.DataAccess.Struct
         // tên hàm trùng tên của Struct
         // không có kiểu trả về
         // hàm khởi tạo có tham số và các tham số phải khởi tạo đầy đủ các thuộc tính
-        public Product(int productID, string productName, int price)
+        public ProductStruct(int productID, string productName, int price)
         {
             ProductID = productID;
             ProductName = productName;
