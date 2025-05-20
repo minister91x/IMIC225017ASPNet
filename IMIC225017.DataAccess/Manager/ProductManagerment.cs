@@ -37,7 +37,6 @@ namespace IMIC225017.DataAccess.Manager
             }
 
 
-
             return list;
         }
 
