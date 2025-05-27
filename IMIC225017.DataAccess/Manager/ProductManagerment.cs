@@ -16,12 +16,17 @@ namespace IMIC225017.DataAccess.Manager
         {
             throw new NotImplementedException();
         }
-
+        /// <summary>
+        /// Lấy danh sách sản phẩm theo yêu cầu
+        /// </summary>
+        /// <param name="requestData"></param>
+        /// <returns></returns>
         public List<Product> ProductGetList(ProductGetListRequestData requestData)
         {
             var list = new List<Product>();
             try
             {
+                int a = 10; // Ví dụ về biến không sử dụng, có thể xóa nếu không cần thiết
                 list = GetProductList();
 
 
@@ -32,8 +37,7 @@ namespace IMIC225017.DataAccess.Manager
             }
             catch (Exception ex)
             {
-
-                throw;
+                throw ex;
             }
 
 
@@ -53,6 +57,13 @@ namespace IMIC225017.DataAccess.Manager
                 {
                     response.ResponseCode = (int)ProductInsertStatus.ProductNotValid;
                     response.ResponseMessage = "Thêm không thành công";
+                    return response;
+                }
+
+                if(!ValidateInput.IsValidEmail(product.ProductName))
+                {
+                    response.ResponseCode = (int)ProductInsertStatus.ProductName_NotValid;
+                    response.ResponseMessage = "Tên sản phẩm không hợp lệ";
                     return response;
                 }
 

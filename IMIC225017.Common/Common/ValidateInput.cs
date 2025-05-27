@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -46,6 +47,38 @@ namespace IMIC225017.Common
                 return false;
             }
 
+            return true;
+        }
+
+        public static bool IsValidEmail(string email)
+        {
+            try
+            {
+                var addr = new MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public static bool IsNumberic(string input)
+        {
+            if (string.IsNullOrEmpty(input))
+            {
+                return false;
+            }
+
+            var isNumber = int.TryParse(input, out int number);
+            if (!isNumber)
+            {
+                return false;
+            }
+            if (number <= 0 || number > int.MaxValue)
+            {
+                return false;
+            }
             return true;
         }
     }

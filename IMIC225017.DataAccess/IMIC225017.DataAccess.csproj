@@ -81,6 +81,8 @@
     <Compile Include="DataObject\Animal.cs" />
     <Compile Include="DataObject\Bird.cs" />
     <Compile Include="DataObject\Car.cs" />
+    <Compile Include="DataObject\ClassA.cs" />
+    <Compile Include="DataObject\ClassB.cs" />
     <Compile Include="DataObject\Employee.cs" />
     <Compile Include="DataObject\Employee2.cs" />
     <Compile Include="DataObject\Lion.cs" />

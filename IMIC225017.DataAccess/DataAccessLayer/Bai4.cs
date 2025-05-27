@@ -36,7 +36,7 @@ namespace IMIC225017.DataAccess.DataAccessLayer
             catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
         }
         public  void UserInput(string s)
@@ -68,8 +68,15 @@ namespace IMIC225017.DataAccess.DataAccessLayer
         {
             return SoThuNhat + SoThuHai;
         }
+        public int TinhTong(int SoThuNhat, int SoThuHai, out int SecondValue, ref string ThirdValue)
+        {
+            SecondValue = 20;
+            ThirdValue = "Xin chao cac bạn lớp IMIC202517";
+            return 10; // 20
+        }
 
-     
+
+
         public T TinhTong<T>(T SoThuNhat, T SoThuHai)
         {
             dynamic a = SoThuNhat;
@@ -79,12 +86,7 @@ namespace IMIC225017.DataAccess.DataAccessLayer
 
 
 
-        public int TinhTong(int SoThuNhat, int SoThuHai, out int SecondValue, ref string ThirdValue)
-        {
-            SecondValue = 20;
-            ThirdValue = "Xin chao cac bạn lớp IMIC202517";
-            return 10; // 20
-        }
+        
 
 
         public int TinhTong_Object(TinhTong_InputData inputData)
