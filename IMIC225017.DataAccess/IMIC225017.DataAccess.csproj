@@ -95,6 +95,8 @@
     <Compile Include="DataObject\Student2.cs" />
     <Compile Include="DataObject\TinhTong_InputData.cs" />
     <Compile Include="CustomException\DataTooLongExeption.cs" />
+    <Compile Include="DbHelper\DbConnection.cs" />
+    <Compile Include="DbHelper\SqlDBConnection.cs" />
     <Compile Include="Enum\ProductInsertStatus.cs" />
     <Compile Include="Enum\ProductItemTypes.cs" />
     <Compile Include="Enum\OrderStatusEnum.cs" />

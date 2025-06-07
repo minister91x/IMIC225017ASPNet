@@ -8,7 +8,8 @@ namespace IMIC225017.DataAccess.DataObject
 {
     public class ProductGetListRequestData
     {
-        public int ProductId { get; set; }
-        
+        public int CategoryID { get; set; }
+        public string ProductName { get; set; }
+
     }
 }

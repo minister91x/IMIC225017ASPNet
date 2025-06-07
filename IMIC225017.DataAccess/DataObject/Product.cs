@@ -9,7 +9,10 @@ namespace IMIC225017.DataAccess.DataObject
     public class Product
     {
         public int ProductId { get; set; }
+        public int CategoryID { get; set; }
         public string ProductName { get; set; }
         public int Price { get; set; }
+
+        public string Description { get; set; }
     }
 }

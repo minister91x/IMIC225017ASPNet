@@ -445,16 +445,37 @@ namespace IMIC225017ASPNet
 
             var productManager = new IMIC225017.DataAccess.Manager.ProductManagerment();
 
-            var product = new IMIC225017.DataAccess.DataObject.Product()
-            {
-                ProductId = 1,
-                ProductName = "<body",
-                Price = 1000
-            };
-            var result = productManager.ProductInsert(product);
+            //var product = new IMIC225017.DataAccess.DataObject.Product()
+            //{
+            //    ProductName = "DELL 123",
+            //    Price = 1000,
+            //    CategoryID = 1,
+            //    Description="đây là mô tả"
+            //};
+            //var result = productManager.ProductInsert(product);
 
-            Console.WriteLine("ResponseMessage:{0}", result.ResponseMessage);
-            Console.WriteLine("ResponseCode: {0}", result.ResponseCode);
+            //Console.WriteLine("ResponseMessage:{0}", result.ResponseMessage);
+            //Console.WriteLine("ResponseCode: {0}", result.ResponseCode);
+
+
+            var requestData = new IMIC225017.DataAccess.DataObject.ProductGetListRequestData()
+            {
+                CategoryID = -1,
+                ProductName = "dell",
+            };
+
+            var list = productManager.ProductGetList(requestData);
+            if(list.Count > 0)
+            {
+                foreach (var item in list)
+                {
+                    Console.WriteLine($"ProductID: {item.ProductId} - Tên sản phẩm: {item.ProductName} - Giá: {item.Price} - Mô tả: {item.Description}");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Không có dữ liệu");
+            }
 
         }
 
