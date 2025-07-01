@@ -10,7 +10,7 @@ namespace IMIC225017.DataAccess.Interface
 {
     public interface IProduct
     {
-        List<Product> ProductGetList(ProductGetListRequestData requestData);
+        List<ProductGetList_ResponseData> ProductGetList(ProductGetListRequestData requestData,out int totalRecords);
         ProductInsertResponseData ProductInsert(Product product);
 
         ProductDeleteResponseData ProductDelete(List<int> ProductIDs);

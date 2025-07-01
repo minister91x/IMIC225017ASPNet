@@ -460,17 +460,73 @@ namespace IMIC225017ASPNet
 
             var requestData = new IMIC225017.DataAccess.DataObject.ProductGetListRequestData()
             {
-                CategoryID = -1,
-                ProductName = "dell",
+                ColorID = 0,
+                ProductName = "",
+                SizeID = 0,
+                PriceFrom = 0,
+                PriceTo = 0,
+                PageIndex = 1,
+                PageSize = 2
             };
-
-            var list = productManager.ProductGetList(requestData);
-            if(list.Count > 0)
+            int TotalRecord = 0;
+            var list_db = productManager.ProductGetList(requestData, out TotalRecord);
+            if (list_db.Count > 0)
             {
-                foreach (var item in list)
+                var parents = new List<Product_Variants_Display_Parents>();
+                // xử lý tao danh sách cha
+                foreach (var item in list_db)
                 {
-                    Console.WriteLine($"ProductID: {item.ProductId} - Tên sản phẩm: {item.ProductName} - Giá: {item.Price} - Mô tả: {item.Description}");
+                    var isDuplicateProductName = parents.Count > 0 && parents.Any(z => z.ProductName == item.ProductName) ? true:false;
+                    if(!isDuplicateProductName)
+                    {
+                        var parent = new Product_Variants_Display_Parents()
+                        {
+                            ProductID = item.ProductID,
+                            ProductName = item.ProductName,
+                            Description = item.Description,
+                            variants_Childrens = new List<Product_Variants_Children>()
+                        };
+
+                        parents.Add(parent);
+                    }
                 }
+
+                // xử lý danh sách con
+
+                foreach (var item in parents)
+                {
+                    var variants_Childrens = new List<Product_Variants_Children>();
+
+                    var lsthildrens = list_db.Where(s => s.ProductID == item.ProductID).ToList();
+                    foreach (var child in lsthildrens)
+                    {
+                        variants_Childrens.Add(new Product_Variants_Children()
+                        {
+                            ColorName = child.ColorName,
+                            Price = child.Price,
+                            SizeName = child.Sizename,
+                            Quantity = child.Quantity,
+                            Image_url = child.Image_url
+                        });
+
+                        //Console.WriteLine("ProductID {0}- ProductName {1}",item.ProductID, item.ProductName);
+                    }
+                    // gán danh sách con vào danh sách cha
+                    item.variants_Childrens = variants_Childrens;
+                }
+
+
+                foreach (var item in parents)
+                {
+                    Console.WriteLine("ProductID {0}- ProductName {1}", item.ProductID, item.ProductName);
+                   // Console.WriteLine("Description: {0}", item.Description);
+                    foreach (var child in item.variants_Childrens)
+                    {
+                        Console.WriteLine("    ColorName: {0} - Price: {1} - SizeName: {2} - Quantity: {3} - Image_url: {4}",
+                            child.ColorName, child.Price, child.SizeName, child.Quantity, child.Image_url);
+                    }
+                }
+
             }
             else
             {

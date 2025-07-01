@@ -90,6 +90,7 @@
     <Compile Include="DataObject\MayviTinh.cs" />
     <Compile Include="DataObject\Product.cs" />
     <Compile Include="DataObject\ProductGetListRequestData.cs" />
+    <Compile Include="DataObject\Product_Variants_Display_Parents.cs" />
     <Compile Include="DataObject\ReturnData.cs" />
     <Compile Include="DataObject\Student.cs" />
     <Compile Include="DataObject\Student2.cs" />

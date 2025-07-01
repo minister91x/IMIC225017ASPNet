@@ -23,9 +23,9 @@ namespace IMIC225017.DataAccess.Manager
         /// </summary>
         /// <param name="requestData"></param>
         /// <returns></returns>
-        public List<Product> ProductGetList(ProductGetListRequestData requestData)
+        public List<ProductGetList_ResponseData> ProductGetList(ProductGetListRequestData requestData, out int totalRecords)
         {
-            var list = new List<Product>();
+            var list = new List<ProductGetList_ResponseData>();
             try
             {
                 //int a = 10; // Ví dụ về biến không sử dụng, có thể xóa nếu không cần thiết
@@ -42,24 +42,46 @@ namespace IMIC225017.DataAccess.Manager
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                 // THÊM GIÁ TRỊ CHO CÁC THAM SỐ 
-                cmd.Parameters.AddWithValue("@CategoryID", requestData.CategoryID);
+
                 cmd.Parameters.AddWithValue("@ProductName", requestData.ProductName);
-              
+                cmd.Parameters.AddWithValue("@ColorID", requestData.ColorID);
+                cmd.Parameters.AddWithValue("@SizeID", requestData.SizeID);
+                cmd.Parameters.AddWithValue("@PriceFrom", requestData.PriceFrom);
+                cmd.Parameters.AddWithValue("@PriceTo", requestData.PriceTo);
+                cmd.Parameters.AddWithValue("@PageIndex", requestData.PageIndex);
+                cmd.Parameters.AddWithValue("@PageSize", requestData.PageSize);
+                cmd.Parameters.AddWithValue("@TotalRecords", System.Data.SqlDbType.Int).Direction = System.Data.ParameterDirection.Output;
                 var reader = cmd.ExecuteReader();
 
                 while (reader.Read())
                 {
-                    var product = new Product
+                    var product = new ProductGetList_ResponseData
                     {
-                        ProductId = reader.GetInt32(reader.GetOrdinal("ProductId")),
-                        CategoryID = reader.GetInt32(reader.GetOrdinal("CategoryID")),
+                        ProductID = reader.GetInt32(reader.GetOrdinal("ProductId")),
                         ProductName = reader.GetString(reader.GetOrdinal("ProductName")),
-                        Price = reader.GetInt32(reader.GetOrdinal("Price")),
-                        Description = reader.IsDBNull(reader.GetOrdinal("Description")) ? null : reader.GetString(reader.GetOrdinal("Description"))
+                        ColorName = reader.GetString(reader.GetOrdinal("ColorName")),
+                        Price = Convert.ToInt32( reader.GetDecimal(reader.GetOrdinal("Price"))),
+                        Sizename = reader.GetString(reader.GetOrdinal("Sizename")),
+                        Quantity = reader.GetInt32(reader.GetOrdinal("Quantity")),
+                        //   Image_url = reader.IsDBNull(reader.GetOrdinal("Image_url")) ? null : reader.GetString(reader.GetOrdinal("Image_url")),
+                        // Description = reader.IsDBNull(reader.GetOrdinal("Description")) ? null : reader.GetString(reader.GetOrdinal("Description"))
                     };
                     list.Add(product);
                 }
 
+                reader.Close();
+                // Lấy tổng số bản ghi từ tham số đầu ra
+                if (cmd.Parameters["@TotalRecords"].Value != DBNull.Value)
+                {
+                    totalRecords = Convert.ToInt32(cmd.Parameters["@TotalRecords"].Value);
+                    // Xử lý tổng số bản ghi nếu cần
+                }
+                else
+                {
+                    totalRecords = 0; // Nếu không có giá trị, đặt về 0
+                }
+
+                // totalRecords = cmd.Parameters["@TotalRecords"].Value != DBNull.Value ? Convert.ToInt32(cmd.Parameters["@TotalRecords"].Value) : 0;
 
             }
             catch (Exception ex)
@@ -158,7 +180,7 @@ namespace IMIC225017.DataAccess.Manager
                             return response;
                     }
                 }
-               
+
 
             }
             catch (Exception ex)
