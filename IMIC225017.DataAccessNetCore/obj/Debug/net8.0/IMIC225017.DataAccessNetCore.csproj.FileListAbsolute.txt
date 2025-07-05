@@ -1,0 +1,12 @@
+C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017.DataAccessNetCore\bin\Debug\net8.0\IMIC225017.DataAccessNetCore.deps.json
+C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017.DataAccessNetCore\bin\Debug\net8.0\IMIC225017.DataAccessNetCore.dll
+C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017.DataAccessNetCore\bin\Debug\net8.0\IMIC225017.DataAccessNetCore.pdb
+C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017.DataAccessNetCore\obj\Debug\net8.0\IMIC225017.DataAccessNetCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017.DataAccessNetCore\obj\Debug\net8.0\IMIC225017.DataAccessNetCore.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017.DataAccessNetCore\obj\Debug\net8.0\IMIC225017.DataAccessNetCore.AssemblyInfo.cs
+C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017.DataAccessNetCore\obj\Debug\net8.0\IMIC225017.DataAccessNetCore.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017.DataAccessNetCore\obj\Debug\net8.0\IMIC225017.DataAccessNetCore.sourcelink.json
+C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017.DataAccessNetCore\obj\Debug\net8.0\IMIC225017.DataAccessNetCore.dll
+C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017.DataAccessNetCore\obj\Debug\net8.0\refint\IMIC225017.DataAccessNetCore.dll
+C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017.DataAccessNetCore\obj\Debug\net8.0\IMIC225017.DataAccessNetCore.pdb
+C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017.DataAccessNetCore\obj\Debug\net8.0\ref\IMIC225017.DataAccessNetCore.dll
