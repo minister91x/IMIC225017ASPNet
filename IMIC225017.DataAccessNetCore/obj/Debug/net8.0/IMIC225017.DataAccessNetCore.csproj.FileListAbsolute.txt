@@ -10,3 +10,4 @@ C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017.DataAccessNetCore\obj\De
 C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017.DataAccessNetCore\obj\Debug\net8.0\refint\IMIC225017.DataAccessNetCore.dll
 C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017.DataAccessNetCore\obj\Debug\net8.0\IMIC225017.DataAccessNetCore.pdb
 C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017.DataAccessNetCore\obj\Debug\net8.0\ref\IMIC225017.DataAccessNetCore.dll
+C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017.DataAccessNetCore\obj\Debug\net8.0\IMIC225017.DataAccessNetCore.csproj.AssemblyReference.cache

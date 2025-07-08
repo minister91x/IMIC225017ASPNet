@@ -1,0 +1,12 @@
+C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017.CommonNetCore\bin\Debug\net8.0\IMIC225017.CommonNetCore.deps.json
+C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017.CommonNetCore\bin\Debug\net8.0\IMIC225017.CommonNetCore.dll
+C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017.CommonNetCore\bin\Debug\net8.0\IMIC225017.CommonNetCore.pdb
+C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017.CommonNetCore\obj\Debug\net8.0\IMIC225017.CommonNetCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017.CommonNetCore\obj\Debug\net8.0\IMIC225017.CommonNetCore.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017.CommonNetCore\obj\Debug\net8.0\IMIC225017.CommonNetCore.AssemblyInfo.cs
+C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017.CommonNetCore\obj\Debug\net8.0\IMIC225017.CommonNetCore.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017.CommonNetCore\obj\Debug\net8.0\IMIC225017.CommonNetCore.sourcelink.json
+C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017.CommonNetCore\obj\Debug\net8.0\IMIC225017.CommonNetCore.dll
+C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017.CommonNetCore\obj\Debug\net8.0\refint\IMIC225017.CommonNetCore.dll
+C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017.CommonNetCore\obj\Debug\net8.0\IMIC225017.CommonNetCore.pdb
+C:\Users\Admin\source\repos\IMIC225017ASPNet\IMIC225017.CommonNetCore\obj\Debug\net8.0\ref\IMIC225017.CommonNetCore.dll

@@ -1,9 +1,16 @@
+using IMIC225017.DataAccessNetCore.DbContext;
 using IMIC225017.WebApsNetCore;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-
+var configuration = builder.Configuration;
 // Add services to the container.
+builder.Services.AddDbContext<IMIC072250DbContext>(options =>
+               options.UseSqlServer(configuration.GetConnectionString("ConnStrIMIC_052025")));
+
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<IMIC225017.DataAccessNetCore.IRespository.IProductRepository, IMIC225017.DataAccessNetCore.Repository.ProductRepository>();
 
 var app = builder.Build();
 
@@ -26,13 +33,13 @@ app.Use(async (context, next) =>
 //});
 
 //app.UseMiddleware<IMIC225017.WebApsNetCore.CustomMiddleWare.MyCustomMiddleWare>();
-app.UseMyCustomMiddleware();
+//app.UseMyCustomMiddleware();
 
 
-app.Run(async context =>
-{
-    await context.Response.WriteAsync("Hello world!");
-});
+//app.Run(async context =>
+//{
+//    await context.Response.WriteAsync("Hello world!");
+//});
 app.UseStaticFiles();
 
 app.UseRouting();
@@ -41,6 +48,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}"
+   );
 
 app.Run();

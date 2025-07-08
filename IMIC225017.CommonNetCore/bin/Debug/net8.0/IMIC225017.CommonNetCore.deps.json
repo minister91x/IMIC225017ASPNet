@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "IMIC225017.CommonNetCore/1.0.0": {
+        "runtime": {
+          "IMIC225017.CommonNetCore.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "IMIC225017.CommonNetCore/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

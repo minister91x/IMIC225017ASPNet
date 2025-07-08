@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("IMIC225017.NetCoreAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5354b8d277d173dd95e96f7500cc287c1bf21c9c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b21a77ef70b3ead2b00ba8e9e76437e9ca35eccb")]
 [assembly: System.Reflection.AssemblyProductAttribute("IMIC225017.NetCoreAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("IMIC225017.NetCoreAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
