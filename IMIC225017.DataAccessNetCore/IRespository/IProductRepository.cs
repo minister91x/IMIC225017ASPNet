@@ -11,5 +11,9 @@ namespace IMIC225017.DataAccessNetCore.IRespository
     {
         Task<List<Product>> ProductGetList(ProductGetListRequestData requestData);
         Task<int> ProductInsert(Product product);
+        Task<int> ProductUpdate(Product product);
+        Task<Product> ProductGetById(int id);
+
+        Task<int> Product_Delete(int id);
     }
 }

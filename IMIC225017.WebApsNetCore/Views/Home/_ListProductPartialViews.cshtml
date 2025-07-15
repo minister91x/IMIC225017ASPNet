@@ -1,0 +1,37 @@
+﻿@model List<IMIC225017.DataAccessNetCore.DataObject.Product>
+@* <marquee>Đây là trang Partialviews đã được chỉnh sửa</marquee> *@
+<table class="table">
+	<thead>
+		<tr>
+			<th>ProductID</th>
+			<th>ProductName</th>
+			<th>Description</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		@if (Model != null && Model.Count > 0)
+		{
+			foreach (var item in Model)
+			{
+				<tr>
+					<td>@item.ProductID</td>
+					<td>@item.ProductName</td>
+					<td>@item.Description</td>
+					<td>
+						<i class="fa fa-edit"></i><a href="/Home/ProductInsertUpdate?Id=@item.ProductID">Sửa</a>
+						<i class="fa fa-trash"></i> <a style="cursor:pointer" onclick="Product_Delete(@item.ProductID)"> Xóa111</a>
+					</td>
+				</tr>
+			}
+		}
+		else
+		{
+			<tr>
+				<td colspan="3">No products available.</td>
+			</tr>
+		}
+
+	</tbody>
+</table>
+

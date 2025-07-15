@@ -1,0 +1,61 @@
+﻿@model IMIC225017.DataAccessNetCore.DataObject.Product
+<div class="container">
+	<div class="form-group">
+		<label for="email">ProductName:</label>
+		<input type="hidden" id="ProductID" value="@Model.ProductID"/>
+		<input type="text" class="form-control" value="@Model.ProductName" id="ProductName" name="ProductName" style="width:50%">
+	</div>
+	<div class="form-group">
+		<label for="pwd">Description:</label>
+		<input type="text" class="form-control" value="@Model.Description" id="Description" name="Description" style="width:50%">
+	</div>
+
+	<button type="button" id="BtnInsertProduct" class="btn btn-success" style="margin:10px;">Lưu lại</button>
+</div>
+
+@section Scripts {
+
+	<script>
+
+		$(document).ready(function(){
+
+			$("#BtnInsertProduct").click(function(){
+
+				ProductInsert();
+			});
+
+
+		});
+
+		
+		function ProductInsert(){
+
+			var productName = $("#ProductName").val();
+			var desc = $("#Description").val();
+
+			if(productName=='' || productName== null){
+				alert("ProductName không được trống!");
+				return;
+			}
+
+			var InputData={
+				ProductID: $("#ProductID").val(),
+				ProductName:productName,
+				Description:desc
+			};
+
+			$.ajax({
+				url: '/Home/ProductInsert',
+				type: 'POST',
+				dataType: 'json',
+				contentType: 'application/json; charset=utf-8',
+				data: JSON.stringify(InputData)
+			}).done(function(rs) {
+				//	LoadPartialViews();
+				console.log(JSON.stringify(rs));
+				alert(rs.des);
+			});
+		}
+	</script>
+
+}
