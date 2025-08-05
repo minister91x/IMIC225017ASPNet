@@ -1,15 +1,42 @@
-﻿@model IMIC225017.DataAccessNetCore.DataObject.Product
+﻿@{
+	var list_category = ViewBag.Categories != null ? (List<IMIC225017.DataAccessNetCore.DataObject.Category>)ViewBag.Categories : new List<IMIC225017.DataAccessNetCore.DataObject.Category>();
+}
+@model IMIC225017.DataAccessNetCore.DataObject.Product
+
+@Html.Partial("~/Views/Home/app-content-header-partial.cshtml", new IMIC225017.WebApsNetCore.Models.AppContentHeaderModels
+{
+	Tittle = "Thêm mới sản phẩm"
+})
 <div class="container">
 	<div class="form-group">
 		<label for="email">ProductName:</label>
-		<input type="hidden" id="ProductID" value="@Model.ProductID"/>
+		<input type="hidden" id="ProductID" value="@Model.ProductID" />
 		<input type="text" class="form-control" value="@Model.ProductName" id="ProductName" name="ProductName" style="width:50%">
 	</div>
 	<div class="form-group">
 		<label for="pwd">Description:</label>
 		<input type="text" class="form-control" value="@Model.Description" id="Description" name="Description" style="width:50%">
 	</div>
-
+	<div class="form-group">
+		<label for="pwd">Category:</label>
+		<select class="form-control" style="width:50%" id="DDlCategoryID">
+			<option value="0">Chọn danh mục</option>
+			@if (list_category != null && list_category.Count > 0)
+			{
+				foreach (var item in list_category)
+				{
+					if (Model.CatorgoryId > 0 && Model.CatorgoryId == item.CategoryID)
+					{
+						<option value="@item.CategoryID" selected>@item.CategoryName</option>
+					}
+					else
+					{
+						<option value="@item.CategoryID">@item.CategoryName</option>
+					}
+				}
+			}
+		</select>
+	</div>
 	<button type="button" id="BtnInsertProduct" class="btn btn-success" style="margin:10px;">Lưu lại</button>
 </div>
 
@@ -27,7 +54,7 @@
 
 		});
 
-		
+
 		function ProductInsert(){
 
 			var productName = $("#ProductName").val();
@@ -41,7 +68,8 @@
 			var InputData={
 				ProductID: $("#ProductID").val(),
 				ProductName:productName,
-				Description:desc
+				Description:desc,
+				CatorgoryId:$("#DDlCategoryID").val()
 			};
 
 			$.ajax({

@@ -12,15 +12,23 @@ namespace IMIC225017.WebApsNetCore.Controllers
     {
 
         private readonly IProductRepository _productRepository;
-        public HomeController(IProductRepository productRepository)
+        private readonly ICategoryRepository _categoryRepository;
+        public HomeController(IProductRepository productRepository,ICategoryRepository categoryRepository)
         {
             _productRepository = productRepository;
+            _categoryRepository = categoryRepository;
         }
 
         public async Task<IActionResult> Index(int? id)
         {
             try
             {
+
+                var sessionUserName = HttpContext.Session.GetString("UserName");
+                if (string.IsNullOrEmpty(sessionUserName))
+                {
+                    return RedirectToAction("Login", "Account");
+                }
                 // bước 1 :đi tìm thư mục views
                 // bước 2: đi tìm thư mục có tên giống tên của Controller( Home) trong thư mục views
                 // bước 3: đi tìm file có tên trùng tên của Action (Index) trong thư mục Home
@@ -37,10 +45,27 @@ namespace IMIC225017.WebApsNetCore.Controllers
         [HttpPost()]
         public async Task<IActionResult> _ListProductPartialViews([FromBody] ProductGetListRequestData requestData)
         {
-            var list = new List<Product>();
+            var listModel = new List<ProductViewModel>();
             try
             {
-                list = await _productRepository.ProductGetList(requestData);
+                // Domain model
+                var list_db = await _productRepository.ProductGetList(requestData);
+
+
+                // convert từ domain model sang view model
+
+
+                foreach (var item in list_db)
+                {
+                    var model = new ProductViewModel
+                    {
+                        ProductID = item.ProductID,
+                        ProductName = item.ProductName,
+                        Description = item.Description,
+                        CatorgoryName = _categoryRepository.CategoryGetByID(item.CatorgoryId).Result.CategoryName
+                    };
+                    listModel.Add(model);
+                }
 
             }
             catch (Exception ex)
@@ -48,7 +73,7 @@ namespace IMIC225017.WebApsNetCore.Controllers
 
                 throw;
             }
-            return PartialView(list);
+            return PartialView(listModel);
         }
 
 
@@ -158,6 +183,7 @@ namespace IMIC225017.WebApsNetCore.Controllers
 
         public async Task<ActionResult> ProductInsertUpdate(int? Id)
         {
+            ViewBag.Categories = await _categoryRepository.CategoryGetList();
             if (Id.HasValue && Id.Value > 0)
             {
                 var product = await _productRepository.ProductGetById(Id.Value);
@@ -170,6 +196,9 @@ namespace IMIC225017.WebApsNetCore.Controllers
             {
                 return View(new Product());
             }
+
+           
+
             return View();
         }
 
@@ -247,6 +276,27 @@ namespace IMIC225017.WebApsNetCore.Controllers
 
 
 
+            return View();
+        }
+
+        public IActionResult DemoValidation()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult DemoValidation(Product model)
+        {
+            if (ModelState.IsValid)
+            {
+                // Xử lý khi dữ liệu hợp lệ
+                return View();
+            }
+            else
+            {
+                // Xử lý khi dữ liệu không hợp lệ
+                return View(model);
+            }
             return View();
         }
 

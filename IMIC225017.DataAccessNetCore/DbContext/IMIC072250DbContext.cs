@@ -21,5 +21,6 @@ namespace IMIC225017.DataAccessNetCore.DbContext
         }
         // Define DbSet properties for your entities
         public DbSet<Product> product { get; set; }
+        public DbSet<Category> category { get; set; }
     }
 }

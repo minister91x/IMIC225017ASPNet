@@ -1,10 +1,11 @@
-﻿@model List<IMIC225017.DataAccessNetCore.DataObject.Product>
+﻿@model List<IMIC225017.WebApsNetCore.Models.ProductViewModel>
 @* <marquee>Đây là trang Partialviews đã được chỉnh sửa</marquee> *@
 <table class="table">
 	<thead>
 		<tr>
 			<th>ProductID</th>
 			<th>ProductName</th>
+			<th>CategoryName</th>
 			<th>Description</th>
 			<th>Action</th>
 		</tr>
@@ -17,6 +18,7 @@
 				<tr>
 					<td>@item.ProductID</td>
 					<td>@item.ProductName</td>
+					<td>@item.CatorgoryName</td>
 					<td>@item.Description</td>
 					<td>
 						<i class="fa fa-edit"></i><a href="/Home/ProductInsertUpdate?Id=@item.ProductID">Sửa</a>

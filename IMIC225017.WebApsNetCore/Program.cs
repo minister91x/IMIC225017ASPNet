@@ -1,4 +1,6 @@
 using IMIC225017.DataAccessNetCore.DbContext;
+using IMIC225017.DataAccessNetCore.IRespository;
+using IMIC225017.DataAccessNetCore.Repository;
 using IMIC225017.WebApsNetCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,7 +13,8 @@ builder.Services.AddDbContext<IMIC072250DbContext>(options =>
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IMIC225017.DataAccessNetCore.IRespository.IProductRepository, IMIC225017.DataAccessNetCore.Repository.ProductRepository>();
-
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddSession();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -50,5 +53,5 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}"
    );
-
+app.UseSession();
 app.Run();

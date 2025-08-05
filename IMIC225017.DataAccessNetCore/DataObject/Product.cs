@@ -11,10 +11,13 @@ namespace IMIC225017.DataAccessNetCore.DataObject
     {
         [Key]
         public int ProductID { get; set; }
+        [Required(ErrorMessage ="Tên sản phẩm là thông tin bắt buộc")]
+        [StringLength(2, ErrorMessage ="Tên sản phẩm không được quá 100 ký tự")]
+       
         public string? ProductName { get; set; }
         public string? Description { get; set; }
         public int? ProductStatus { get; set; }
-        public int? CatorgoryId { get; set; }
+        public int CatorgoryId { get; set; }
         public int? IsHot { get; set; }
         public int? IsHomePage { get; set; }
         public int? CreatedUser { get; set; }

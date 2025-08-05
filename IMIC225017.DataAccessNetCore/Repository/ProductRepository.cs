@@ -67,6 +67,7 @@ namespace IMIC225017.DataAccessNetCore.Repository
 
             productCurr.ProductName = product.ProductName;
             productCurr.Description = product.Description;
+            productCurr.CatorgoryId = product.CatorgoryId;
 
             _dbContext.product.Update(productCurr);
             return _dbContext.SaveChanges();
