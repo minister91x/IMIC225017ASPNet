@@ -24,11 +24,11 @@ namespace IMIC225017.WebApsNetCore.Controllers
             try
             {
 
-                var sessionUserName = HttpContext.Session.GetString("UserName");
-                if (string.IsNullOrEmpty(sessionUserName))
-                {
-                    return RedirectToAction("Login", "Account");
-                }
+                //var sessionUserName = HttpContext.Session.GetString("UserName");
+                //if (string.IsNullOrEmpty(sessionUserName))
+                //{
+                //    return RedirectToAction("Login", "Account");
+                //}
                 // bước 1 :đi tìm thư mục views
                 // bước 2: đi tìm thư mục có tên giống tên của Controller( Home) trong thư mục views
                 // bước 3: đi tìm file có tên trùng tên của Action (Index) trong thư mục Home

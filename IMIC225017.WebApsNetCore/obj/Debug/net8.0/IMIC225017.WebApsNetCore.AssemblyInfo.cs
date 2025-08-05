@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("IMIC225017.WebApsNetCore")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+19afa768a660bfc20defc44b4f78ebcabc439cbb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1a8e7114aab7475f0dec56d3c4d6f5211fd34bf1")]
 [assembly: System.Reflection.AssemblyProductAttribute("IMIC225017.WebApsNetCore")]
 [assembly: System.Reflection.AssemblyTitleAttribute("IMIC225017.WebApsNetCore")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

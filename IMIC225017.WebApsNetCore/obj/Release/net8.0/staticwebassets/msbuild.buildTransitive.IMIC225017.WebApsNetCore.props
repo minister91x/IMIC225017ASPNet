@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\IMIC225017.WebApsNetCore.props" />
+</Project>
